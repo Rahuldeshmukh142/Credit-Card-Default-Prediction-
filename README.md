@@ -13,43 +13,10 @@ Table of Contents
 9.	    Evaluating the model
 10.	Conclusion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Abstract: 
 Aiming at the problem that the credit card default data of a financial institution is unbalanced, which leads to unsatisfactory prediction results, this project proposes a prediction model based on various supervised, classification algorithms. It mostly focuses on enhancing the classifier performance for credit card default prediction.  Different machine learning models are also employed to obtain efficient results. We developed the hypothesis of whether developed models using different machine learning techniques are significantly the same or different and whether resampling techniques significantly improves the performance of the proposed models. One-way Analysis of Variance is a hypothesis-testing technique, used to test the significance of the results. The split method is utilized to validate the results in which data has split into training and test sets. The results using our proposed methods significantly improve the accuracy of Taiwan clients credit dataset.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1. Problem Statement 
+1.** Problem Statement **
 This project is aimed at predicting the case of customers' default payments in Taiwan. From the perspective of risk management, the result of predictive accuracy of the estimated probability of default will be more valuable than the binary result of classification - credible or not credible clients. We have to evaluate which customers will default on their credit card payments.
 Financial threats are displaying a trend about the credit risk of commercial banks as the incredible improvement in the financial industry has arisen. In this way, one of the biggest threats faced by commercial banks is the risk prediction of credit clients.
 To analyze and predict the above given database, the current project is developed. This project is an attempt to identify credit card customers who are more likely to default in the coming month
@@ -122,7 +89,12 @@ One way of renaming the columns in a Pandas dataframe is by using the rename() f
  6.2. Describe :
           It computes a summary of statistics pertaining to the DataFrame columns. This function gives the mean, std and IQR values. And, function excludes the character columns and gives a summary about numeric columns.
  6.3. Analysis of different variables 
+  
 6.3.1. Analyzing the default pay
+
+![image](https://user-images.githubusercontent.com/80576672/154727144-6ee9835e-93a7-43b8-8550-84db032d138c.png)
+![image](https://user-images.githubusercontent.com/80576672/154727157-44619bfe-67d0-4fda-a3e1-fab39112fb59.png)
+
   
 From the above graph on x-axis 0 indicates as not a default payment and 1 indicates the default payment.From this we can say that for more customers there are no default payments for next month.
 
@@ -133,22 +105,30 @@ From the above graph on x-axis 0 indicates as not a default payment and 1 indica
 
 6.3.2. Analyzing the default payment next month v/s limit_balance
  
+![image](https://user-images.githubusercontent.com/80576672/154727206-2926f5a6-b89f-44da-8aa8-281f47ea5da8.png)
 
 
 LIMIT_BAL Amount of the given credit (USD): it includes both the individual consumer credit and his/her family (supplementary) credit. Including this variable in the study is important as the credit line of a customer is a good indicator of the financial credit score of the customer. Using this variable will help the model predict defaults more effectively
 
 6.3.3. Analyzing the customers based on their  Education 
  
+ ![image](https://user-images.githubusercontent.com/80576672/154727258-cfa7de0f-5fc8-4867-b445-777e70156624.png)
+![image](https://user-images.githubusercontent.com/80576672/154727272-6444285d-bc09-4e84-97ff-1b2b3e01a37b.png)
+
  
 Education (1 = graduate school; 2 = university; 3 = high school; 4 = others) It might be useful to see whether the education level of the customer is in any way related to his/her probability of default. The distribution of defaults based on education level will be an interesting chart to look at. From the above we can say that most of the people are university educated followed by graduated schoolMore number of credit holders are university students followed by Graduates and then High school students.
 
 6.3.4. Analyzing the LIMIT_BAL, SEX and the dafault payment for next month variables
 
-  
+  ![image](https://user-images.githubusercontent.com/80576672/154727308-66b97c4c-dd7f-4f1b-904f-4ca3aca87459.png)
+
  
 Gender (1 = male; 2 = female) It might be useful to see whether the gender of the customer is in any way related to his/her probability of default.
 
 6.3.5. Analyzing the history of payment
+ 
+ ![image](https://user-images.githubusercontent.com/80576672/154727370-34c048ee-50c4-4084-aaa6-865cde5372ed.png)
+
  
 History of past payment. Customers’ past monthly payment records (from October 2015 to March, 2016) were tracked and used in the dataset as follows:The measurement scale for the repayment status is: -2 = Minimum due payment scheduled for 60 days -1 = Minimum due payment scheduled for 30 days 0 = pay duly; 1 = payment delay for one month; 2 = payment delay for two months; . . .; 8 = payment delay for eight months and above; This information is very crucial as it directly provides the payment status of the customer for the past 6 months. Using these variables will train the model efficiently to predict defaults. 
 
@@ -157,42 +137,33 @@ History of past payment. Customers’ past monthly payment records (from October
 
 6.3.6. Analyzing the bill statements of the customers
  
+ ![image](https://user-images.githubusercontent.com/80576672/154727410-78b67289-d451-4356-a109-4c65f293be52.png)
+
+ 
 Actual bill statements of the customers for the past 6 months would give a quantitative estimate for the amount spent by the customer using the credit card. Amount of USD paid by the customers in the past 6 months would give the repayment ability of the customer and the pattern for payment could be used to train the model efficiently. 
 We found the 'Bill_AMT' variables contain negative values in the case a customer overpays their bill. This could be caused by an automatic payment set if the bill for that month is not as high as the automatic payment is set for. 
 
 
 6.3.7. Analyzing the Sex and education variable
- 
+
+![image](https://user-images.githubusercontent.com/80576672/154727447-68819f50-f1b4-4cf3-84f4-ca6e0ed64b73.png)
+
+
 As far as education goes there seems to be pretty equal likeliness for each class. Male's tend to have a high default rate for each, which is interesting considering this set contains almost double the amount of females.
 
 6.3.8. Analyzing the age of the customers
-  
+ 
+ ![image](https://user-images.githubusercontent.com/80576672/154727464-e27d0e6e-336e-420b-bc1a-91771fae06a9.png)
+
+![image](https://user-images.githubusercontent.com/80576672/154727491-d0331d7d-6f93-40de-b25b-8f03e3cf8703.png)
+
 
 Age (year) It might be useful to see whether the gender of the customer is in any way related to his/her probability of default. From the above graphs we can say that most of the customers are from the age group of 25-30 years.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 CORRELATIONS:
+
+![image](https://user-images.githubusercontent.com/80576672/154727578-af546a8c-d559-4ebf-b445-7cf7c8fe08f1.png)
 
  
 The above figure is an  indication about the changes between two variables. We can plot correlation matrices to know which variable is having a high or low correlation in respect to another variable. 
