@@ -100,9 +100,6 @@ From the above graph on x-axis 0 indicates as not a default payment and 1 indica
 
 
 
-
-
-
 6.3.2. Analyzing the default payment next month v/s limit_balance
  
 ![image](https://user-images.githubusercontent.com/80576672/154727206-2926f5a6-b89f-44da-8aa8-281f47ea5da8.png)
@@ -212,10 +209,8 @@ model and can be used to make future predictions.
 
 1.	Confusion Matrix: It is nothing but a tabular representation of Actual vs Predicted values. This helps us to find the accuracy of the model and avoid overfitting. This is how it looks like:  calculate the accuracy of your model with: 
 2.	 ROC Curve: Receiver Operating Characteristic(ROC) summarizes the model’s performance by evaluating the trade-offs between true positive rate (sensitivity) and false positive rate(1- specificity). For plotting ROC, it is advisable to assume p > 0.5 since we are more concerned about success rate. ROC summarizes the predictive power for all possible values of p > 0.5.  The area under curve (AUC), referred to as index of accuracy(A) or concordance index, is a perfect performance metric for ROC curve. Higher the area under the curve, better the prediction power of the model. Below is a sample ROC curve. The ROC of a perfect predictive model has TP equals 1 and FP equals 0. This curve will touch the top left corner of the graph. 
-3.	
 
-
-
+![image](https://user-images.githubusercontent.com/80576672/154728193-c00c38ba-30d4-4ed1-b62a-be14b5b6295e.png)
 
 
 10. Conclusion: 
@@ -227,5 +222,3 @@ Next we fine-tuned the better performing model, Logistic Regression, with GridSe
 This led us to trying ensemble learning to see if our overall accuracy could be improved by combining various models' predictions. Once again there did not seem to be a significant improvement in both the Bagging Classifier and Voting Classifier when compared to our Logistic Regression model.
 In the end, looking at the accuracy scores of each model was not enough information to choose which model performed best when trying to predict whether or not a person would default on their credit card. Above one can clearly see how close all these accuracy scores fall. In fact, by just seeing the accuracy scores the Voting Classifier seems to perform the best. But if looked at performance via ROC curves the Logistic Regression model seems to perform the best and the Voting Classifier does significantly worse.
 For future work, we think it would be interesting to develop more complex models, such as implementing a neural network and seeing if there could be a better performance of an 82% accuracy score since all our previous techniques did not seem to affect the accuracy.
-
-
