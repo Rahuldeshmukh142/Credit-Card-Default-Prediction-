@@ -199,6 +199,8 @@ Support Vector Machine or SVM is one of the most popular Supervised Learning alg
 The goal of the SVM algorithm is to create the best line or decision boundary that can segregate n-dimensional space into classes so that we can easily put the new data point in the correct category in the future. This best decision boundary is called a hyperplane. 
 SVM chooses the extreme points/vectors that help in creating the hyperplane. These extreme cases are called support vectors, and hence the algorithm is termed as Support Vector Machine. Consider the below diagram in which there are two different categories that are classified using a decision boundary or hyperplane:
  
+ ![image](https://user-images.githubusercontent.com/80576672/154727975-64251f6b-7c31-4e69-9ce6-3fa9e341ac2f.png)
+
 
 Ensemble learning is a general meta approach to machine learning that seeks better predictive performance by combining the predictions from multiple models.The three main classes of ensemble learning methods are bagging, stacking, and boosting, and it is important to both have a detailed understanding of each method and to consider them on your predictive modeling project.
 
