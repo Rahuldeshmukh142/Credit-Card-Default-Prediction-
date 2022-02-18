@@ -169,8 +169,7 @@ CORRELATIONS:
 The above figure is an  indication about the changes between two variables. We can plot correlation matrices to know which variable is having a high or low correlation in respect to another variable. 
 7. Feature Importance
  
-
-
+![image](https://user-images.githubusercontent.com/80576672/154727793-f79b7f80-4186-457c-9d0d-adbf18a89324.png)
 
 
 8. Training the models
