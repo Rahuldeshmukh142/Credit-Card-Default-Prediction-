@@ -1,5 +1,5 @@
 # Credit-Card-Default-Prediction-
-Table of Contents
+Table of Content
 
              Abstract
 1.	    Problem statement
